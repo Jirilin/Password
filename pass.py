@@ -5,7 +5,7 @@ import hashlib
 # Function to create a new password database
 def create_database():
     conn = sqlite3.connect("passwords.db")
-    cursor = conn.cursor()
+    cursor = conn.cursor()     #To execute SQL Queries
     cursor.execute('''CREATE TABLE IF NOT EXISTS passwords (website TEXT PRIMARY KEY, username TEXT, password TEXT)''')
     conn.commit()
     conn.close()
@@ -60,5 +60,5 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-if __name__ == "__main__":
+if __name__ == "__main__":         #always executed
     main()
